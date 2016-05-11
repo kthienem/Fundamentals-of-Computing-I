@@ -1,0 +1,28 @@
+User's Perspective:
+This program begins by printing an explanantion of what it does and how you can
+manipulate the rotation speed of the ferris wheel. The graphics window then
+opens with a rotating circle of different colored hexagons. This rotation can be
+sped up using the number keys on the keyboard.
+
+Programmer's Perspective:
+When the gfx window opens the program begins by drawing a white circle in the 
+center of the screen. It then draws six different colored hexagons around the 
+perimeter of the circle with equal angles inbetween each hexagon. The program
+prints the hexagons by calling the drawPolygon function 6 times, each with a 
+different input representing the position of the hexagon. The input into the 
+function is used to determine where the center of the hexagon is located. The
+dawPolygon function also calls the color function which changes the color of the
+polygon depending on the input. The change in angle used to simulate animation
+is defaulted to 0.01. This value can be changed using the number keys from
+1 to 9. These keys change the value by multiplying the number by 0.01. The
+program terminates when the user presses q.
+
+Verification of correctness:
+I verified that the program was correct by observing the it performed as
+expected. There were no errors that would occur based on different keys the user
+could press. One change I made in my program to prevent errors is that in my 
+program I did not want the wheel to ever stop. Originally I had the user press
+a and d to accelerate and decelerate the wheel respectively. When these inputs
+were used there was an issue where if the user sped up the ferris wheel to a 
+high rate and then rapidly decelerated it, they could make the ferris wheel stop.Because of this error I decided to change the input for change in rotational
+speed.

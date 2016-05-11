@@ -1,0 +1,26 @@
+	The program is designed to compute the roots of a quadratic equation.
+The user is asked to input the coeffiecients of their desired quadratic formula.
+The program then uses these coefficients to compute the roots and displays them
+to the user. If the roots are imaginary then the program displays an error
+message explaining that it cannot compute non-real roots and then exits the
+program.
+
+	The program begins by displaying a meesage telling the user what the
+program does. It then tells the user to input the coefficients of the desired
+quadratic equation. The program prompts each of the three coefficients
+seperately. After receiving the coefficients from the user it first checks that
+the value underneath the square root to make sure that it is greater than or
+equal to zero. If it is less than zero it diplays an error message saying that
+the program cannot compute imaginary roots and exits the program. If the value
+is greater than or equal to zero it calculates the two roots of the quadratic
+equation and displays them to the user.
+
+	The program was evaluated for correctness by checking the calculated
+values against actually working out the the roots using the quadratic formula
+By doing this I verified that it produced correct results. Values that produced
+both real and imaginary roots were tested to see if the program properly
+calculated the value underneath the radical to determine whether or not the
+root will be real or imaginary. Before adding the if statement which checked
+for imaginary roots, the program displayed imaginary roots as nan. After
+seeing this I decided to add in the check for imaginary roots to prevent this 
+from happening.

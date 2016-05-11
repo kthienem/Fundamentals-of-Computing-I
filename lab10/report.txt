@@ -1,0 +1,83 @@
+User's Perspective:
+The program begins by opening a graphics window that is completely blank. The
+user can then press keys 1-7 to view the different fractals. When a key is 
+pressed it will draw the fractal and then wait for another input. When a new 
+fractal is chosen it will clear the screen before drawing the next fractal. The
+user can press q to exit the program at any time.
+
+Programmer's Perspective:
+There are seven different fractals that can be selected in this program. It
+begins by opening a graphics window of a predefined width and length it then
+waits for input from the user. The user can press keys 1-7 to choose different
+fractals to be displayed in the graphics window. The program can be exited by
+pressing the 'q' key. Any other input is taken in a goes to the default case
+where nothing is done.
+
+The '1' key corresponds to Siepinski's Triangle. This function works by first
+drawing one big triangle on the screen. It then calls three iterations of
+itself. The new parameters called in each iteration create three smaller
+triangles within the original one that have sides half the length of the sides of
+the previous trangle. This recursion continues until the length of the sides is
+less than 3.
+
+The '2' key corresponds to the shrinking squares fractal. It begin by drawing
+one big square whose center is located at the center of graphics window. The
+function is then called four times within itself with parameters that draw
+four smaller squares whose centers are located at the four corners of the
+previous square. This recursion continues until the length of the sides are less
+than 3.
+
+The '3' key corresponds to the spiraling squares fractal. It begins by drawing
+a square in the center with sides of length 1. In each recursive call of the
+function, the position from where the square is drawn is changed. This
+position is dependent on the angle and distance away from the center. These
+parameters are increased in each recursive call so the location of the squares
+change to look like a spiral. In each recursive call the length of the sides
+is also increased. The recursion continues until the coordinate for where the
+square is drawn from is outside the bounds of the graphics window.
+
+The '4' key corresponds to the snowflake circular lace fractal. It begins by 
+drawing one big circle whose center is located at the center of the graphics
+window. The function is then called six times with parameters that draw six
+smaller circles whose centers are located on the circumference of the previous
+circle, each having equal angles between the others adjacent to it. The
+recursion continues until the radius of the circle is less than 1.
+
+The '5' key corresponds to the snowflake fractal. It begins by drawing 5 lines
+which go from the center the graphics window to the five vertices of an
+equilateral pentagon. Each time a line is drawn the function is recursively
+called with its new parameters being the end of the previous line. The
+recursion continues until the length of the lines is less than 1.
+
+The '6' key corresponds to the tree fractal. It begins by drawing one line
+starting at the bottom center of the graphics window and going straight up. At
+the end of each line the function is recursively called to draw two lines each
+a given angle between the direction of the previous line and the direction of
+the new line. When new lines are drawn at the end of another the length is 
+decreased. The recusrion continues until the length of the lines are less than
+1.
+
+The '7' key corresponds to the fern fractal. It begins by drawing a line 
+starting at the bottom center of the graphics window and going straight up.
+The function is then recurively called with new parameters so that there are
+2 lines branching from four different points that are equidistant from each
+other. These 8 lines are all offset by a given angle. The recursion continues
+until the length of the lines is less than 3.
+
+Output Verification:
+I verified the output of my program by comparing my fractals with images 
+provided in the lab description to confirm that the topology of my fractals
+were similar to that of those images. 
+
+Gallery:
+The gallery is a window containing 16 different variations of the tree
+fractal. In main there is a switch if the user presses 'q' the program will
+end and if they press any other key it will reprint the trees. For the other
+keys it enters a for loop that will loop through 16 times. Each time through
+the loop a new color is selected using rand(). rand() is seeded with time so 
+each one is different every time. It then calls the recursive function. Each
+tree has the same length and angle for the inital "trunk" of the tree. The
+function also takes in random numbers for the starting position of the
+fractal. The last part that is different is after the first line is drawn for
+an iteration the angle of the next arms vary randomly between pi/2 and pi/11.
+The scaling of the arms, number of splits, and base case remain the same.

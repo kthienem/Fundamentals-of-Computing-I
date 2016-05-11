@@ -1,0 +1,29 @@
+User's Perspecive:
+The graph program displays a message telling what function is being graphed and
+the range of the x values. It then displays the x values with their 
+corresponding y values and a determined number of #'s. One x value and one y
+value along with the #'s are displayed per line. After all the values are
+displayed the min and max locations are displayed along with their x position.
+
+Programmer's Perspective:
+The program is made with a predetermined function and range. This information
+is displayed to the user. ymin and ymax values are set before the printing loop
+begins so that the program will have values to compare each new value to. After
+these values are set the loop to "print" the function begins. The loop starts
+at the minimum x value and steps in increments of 0.2. For each progression 
+through the loop it calculates the y value and then prints the #'s. The #'s
+are printed by using the a nested loop the counts from 0 until the counter
+value is greater than the y value. At the end of each loop iteration the value
+of y is compared to the stored min and max values. If the y value less than the
+stored min or greater than the stored max, that value is stored as the new min
+or max and the value of the loop counter, i.e. the x value, is stored as the
+position of the min or max. After the print loop is finished messages are 
+displayed telling the user the value of the min and max and where they occured
+in the graph.
+
+Verification:
+I verified the correctness of the output by graphing the function using a
+graphing calculator to make sure the shape of the graph was similar. I also
+used it to check the min and max values. Becuase there is no user input, there
+is no reason to check for the validity of inputed values or put in checks to 
+display error messages when something does not work properly. 

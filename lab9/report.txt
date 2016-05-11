@@ -1,0 +1,53 @@
+User's Perspective:
+The program begins by telling the user that they are now playing the game of
+life. It then lists the options the user has and tells them what each option
+does. After it tells the user what to do, it asks for their first choice. The
+user continues to either add or remove cells, advance the simulation, quit the
+simulation, or to play the simulation continuously. It lets the user know that 
+if they choose to play it continuously they must press ctrl-c to exit the
+program. Using these choices the user then plays the game of life. If the user
+inputs a file containing a list of commands, the program uses this list of 
+commands instead of asking the user for inputs.
+
+Programmer's Perspective:
+The program begins by checking how many arguments have been entered in the 
+command line. If there are more than two it tells the user that they have 
+inputted too many files and ends the programs. If there are only one or two
+files then the program creates two arrays, one that holds the current generation
+of the board and one that contains the next generation after the rules have been
+applied. When the boards are created the first row and column are filled with 
+line to mark the edge of the board. The rest of the space in the boards are
+filled with blank spaces, i.e. dead cells. 
+
+After the arrays have been created, if only one argument has been inputed on the
+command line then it displays the instructions to the user and asks it for their
+choice. If there are two arguments then it reads in the choices from the input
+file. 
+
+If command is given to add or remove a cell the user is asked to give
+coordinates for which cell they would like to add or remove. If the coordinates
+are not within the boundaries of the board, an error message is displayed and
+the user is asked to enter a new choice. If the coordinates are valid then that
+cell is turned either alive or dead, depending on the choice made by the user.
+
+If the user chooses to advance the simulation, the program begins by checking
+each position of the current board and checking the number of adjacent live
+cells. After the surroundings of a cell is checked, another function is called
+to apply the rules of the game. Based on the rules the program fills the 
+corresponding cell on the next generation board and continues on to the next
+cell. Once all the cells are checked and the board containing the next 
+generation is filled, it is copied over to the board with the current generation
+and printed to the terminal. 
+
+If the user chooses to advance the simulation continuously a while loop is
+entered that can never be false. This loop continuously calls the function that
+advances the simulation, pauses the function, and then clears the terminal.
+Because this loop can never be false the user has to type ctrl-c to stop the
+simulation. 
+
+Output verification:
+I verified the output of this program by checking that the rules of the game
+have been applied properly to a given board. There are some basic configurations
+that have predictable simulations. By observing that the program outputs the 
+proper board, based on what is expected from the rules of the Game of Life, one
+can verify that the program si working properly.

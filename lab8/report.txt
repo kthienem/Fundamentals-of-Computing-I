@@ -1,0 +1,118 @@
+The two people who worked on this program together were I, Kristopher Thieneman,
+and Patrick Drumm.
+
+User's Perspective:
+The crossword program begins by explaining to the user what the program does. It
+describes that the program will take in a list of words and create a crossword
+puzzle consisting of these words along with anagram clues to help solve the
+puzzle. It warns the user that a maximum of 20 words may be entered and that no
+words may be over 15 letters in length. It also tells the user that they can end
+the list of words before 20 by typing a period instead of a word.
+
+The program then prompts the user to enter their deisred words. After the user
+enters their words the program displays the output. If there is a word that can
+not be placed it displays an error message saying what word could not be placed.
+
+The output that follows is a solution to the puzzle which consists of periods
+and the words themselves which have been placed on the board. Following the
+solution board is the unsolved puzzle. This output consists of pound symbols
+located where the periods are in the solution board and blank spaces located
+where the letters are located in the solution puzzle. Following the puzzle
+board is the anagram clues. Each clue consists of the coordinate in the grid of
+the first letter of the word, whether the word is across or down, and an anagram
+of the word.
+
+The user can also alternatively input the list of words from a text file and
+output the puzzle into a text file.
+
+
+Programmer's Perspective:
+The program begins by initializing an array filled with null characters. This 
+array is used to hold the words inputed by the user. It then uses the number of
+arguments on the command line. If there is only one argument, or more than 3
+arguments, then the program proceeds to have the user manually input the words
+for the crossword. If there are 2 or 3 arguments then the program interprets
+this as the user has given a file in which contains a list of words and scans in
+the words in the file. If there is a file inputed by the user and a word is too
+long, the program warns the user that there was a word which was too long and
+says which line it appears in.
+
+After the words have been scanned in, the array of words enters a function which
+makes all the letters upper case. This array then uses bubble sort to organize
+the words by their length from longest to shortest. The words are then ready to
+be placed in the board.
+
+The three functions called in main, after the words are sorted by length, all have
+code which prints the output. This program allows the user to give an output
+file where all the output will be printed. Before calling the last three
+functions, the program checks to see if there were three arguments entered on
+the command line. If there were three arguments entered then it opens the third
+argument as a file in which to print the output. After this process is completed
+the program begins to place the words.
+
+The first function to be called for this process is generateBoard. This function
+begins by generating a 15 by 16 board. A 15 by 15 segment of the board is filled
+with periods. The final column is filled with null characters so the program
+knows when to stop printing a row of the board. The longest word is then placed
+in the very center of the board. After this word has been placed, another
+function is called within generateBoard which places all other words that it 
+can. This starts with the second longest word and then moves row by row,
+checking in each row for characters in the row that match characters in the
+word. When a letter is found two functions are called which check the spaces
+immediately to the left, right, top, and bottom of the matched character.
+Depending on which spaces are clear, either the left and right, or the top and
+bottom, the program decides which direction it will try and place the word. Once
+it decides which direction the word will be placed. it moves to the position
+where the first letter will be placed. It then moves through each place where a
+letter will be placed and checks whether that space and the surrounding spaces
+have a period in them. By checking that they are a period it is able to say
+that a word cannot be placed in the case where either there exists a letter or
+it has reached the end of the board. If the word can be placed then it copies 
+that word into the array containing the board and moves on to the next word in
+the list. If it reaches a word that either has no matching characters or there
+is no space on the board where it can be placed it displays an error message
+telling the user which word could not be placed. It then kicks out of the
+functions and returns to generate board.
+
+After the board has been generated the output is printed. It begins by printing
+each row of the board array. This array is the solution to the crossword. A
+function is then called to print the blank board consisting of pound symbols and
+blank spaces. A function to print the clues is then called. This function begins
+by calling a function to copy the words array into a new array that can be
+modified. This new array is then passed into a function which jumbles every
+word so we are left with an anagram of the original words. When the clues are
+printed the coordinates of the beginning of the word and whether the word is 
+across or down is printed. These two pieces of information are created and
+placed into an array of structures when the words are copied into the board 
+array. If the program decides that the word can be placed horizontally it copies
+the string Across into the structure. If it decides it can be placed vertically
+then it copies the string Down into the structure. To get the coordinates of the
+words, the pointer which points to the the location of the intersection is
+manipulated to create coordinates which are then put into the structure. The
+coordinates, whether it is across or down, and the anagram of the word is then 
+printed. The three functions generateBoard, poundGrid which prints the unsolved
+board, and printClues all take in an argument which is a file pointer to the
+output file given by the user. If this pointer points to null then these
+functions print the output to terminal window. If it actually points to a file
+then the functions print their output to the given file.
+
+Output Verification:
+The output of this program is verified by checking whether or not the words it
+has placed are correctly placed. The first thing to check is that the longest
+word has been placed in the center of the puzzle. Next you must check that the
+program did not try to place words over top of another one or directly next to
+another word. You must also check that the letters the program said matched
+actually do match. If it says that a word could not be placed then you need to
+check if the given word can truly not be placed in the puzzle. If the words are
+placed correctly then it is verified that the program has worked in this aspect.
+If the words have been correctly placed then it easy to check that it has
+properly printed the unsolved board. If there is a period in the solution board
+then there should be a pound symbol in the puzzle. If there is a letter in the
+solution board, then there should be a blank space in the puzzle. The final
+output to check is if the clues are correct. The order that the clue are printed
+should be sorted from longest to shortest and only contain words that the
+program was able to place. You can check the coordinates by counting which row
+and column the first letter of each word is. The direction can be checked by
+simply observing in the solution board which direction the word has been placed.
+The anagram can be checked by making sure that all the letters of the words they
+are supposed to represent are accounted for.

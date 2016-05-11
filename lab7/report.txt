@@ -1,0 +1,47 @@
+User's Persepctive:
+This program gives you four different options of what to do with a list of 
+sayings. You begin by entering the name of a file that contains a list of
+sayings. After entering this file you will be able to either list all of the
+sayings in the file, add new sayings to the list, search for sayings containing
+a certain word, or save all of the sayings to a new file which the user inputs
+the name of the file.
+
+Programmer's Perpestive:
+This program contains five functions not including the work done in main. These
+five functions are readFile, printSayings, newSaying, searchWord, and
+saveSayings. The program begins in main by prompting the user to enter the name
+of the startup file containing the sayings. It checks to see that the file
+actaully exists. If it does not then it displays and error message and ends the
+program. If the file does exist then a the sayings are read in as strings and
+put in an array. A menu is then diplayed which lists the options the user has
+to interact with the program. The user then enters their choice. Their choice is
+used to decide which case of a switch statement is executed. If the user's 
+choice is not valid then they are asked to enter another choice. The user can
+exit the program by typing "5" when prompted to enter a choice. Options 1 - 4
+direct the program towards the respective functions.
+
+Option "1" prints all the sayings in the array. It prints the sayings by
+printing the rows of the array as strings.
+
+Option "2" prompts the user to add a new saying to the list. The user enters
+the new saying and it is copied into the array of strings.
+
+Option "3" allows the user to search for a specific keyword within the list of
+sayings and prints only the sayings that contain the keyword. The function 
+prompts the user to enter the keyword. The function strstr is then used to 
+check to check each saying for the keyword. If it finds a saying that contains
+it then it is printed.
+
+Option "4" allows the user to save the array of sayings into a new file. The 
+user is prompted to enter the name of the file in which the sayings will be 
+copied to. The sayings are then printed into the new file using fprintf.
+
+Output Verification:
+I checked for the validity of the output of my program by running it through
+multiple iterations and observing that it gave the outputs that were expected.
+I began by running the program and printing out the list of sayings. I then
+would add sayings to the list and reprint the list to make sure that it
+properly added the new strings to the array. I then would search for certain
+keywords and made sure the program printed the correct strings. Finally I
+would save the sayings to a new file and then open the file to make sure that
+all the strings were properly copied over to the new file.

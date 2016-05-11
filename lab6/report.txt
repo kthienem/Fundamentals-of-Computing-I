@@ -1,0 +1,36 @@
+User's Perspective:
+Carnival is a program which moves a system of objects around the screen, each
+with a different axis of motion. The central object is a square which moves
+horizontally across the screen. From the center of this square there is a line 
+that extends out from the center and rotates in a circle around the square. 
+On the end of this arm, there is a system of four smaller lines that rotate in 
+a circle around the end of the first arm. Located at the end of each of these 
+four smaller arms is a circle. On top of this system there is a circle with
+its center located at the center of the sliding square. The radius of the 
+circle oscillates so the circle gets bigger and smaller as it slides across the
+screen. Press q to stop the animation and close the window.
+
+Programmer's Perspective:
+This program is based mainly off of keeping track of the centers and endpoints
+of lines that are in the system of motion. In the main function of the program
+the position of the the center of the square, the change in angle of the
+rotating objects, and the radius of the oscillating circle. In main the 
+oscillating circle is drawn and the funtion to draw the sliding square is
+called.
+
+In this function the sliding square is drawn and the next function is called.
+The next function is used to draw the rotating arm. After the rotating arm is
+drawn the function to draw the wheel arms is called. The two funtions to draw
+the arm and wheel have the angle of whiched they are drawn by a value that is
+incremented in main. After the wheel is drawn the circles on the tips of 
+the arms are drawn. 
+
+This completes drawing all of the different parts of the system. Their
+positions are incremented each time through the loop to give the appearance
+of motion. When all the different pieces are drawn a function is called to
+change the color in which the shapes are being drawn so that each of the 
+shapes is drawn in a different color.
+
+Accuracy:
+I checked the accuracy of the program by observing if the animation of 
+system perfomred as I expected them to.
